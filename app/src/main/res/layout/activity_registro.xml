@@ -56,14 +56,14 @@
             android:hint="Nombre"
             android:inputType="textPersonName" />
 
-        <EditText
+        <!--<EditText
             android:id="@+id/editEdad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:ems="10"
             android:hint="Edad"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName" />-->
 
         <EditText
             android:id="@+id/editFechadeNacimiento"
@@ -83,7 +83,7 @@
             android:hint="Correo electronico"
             android:inputType="textPersonName" />
 
-        <EditText
+        <!--<EditText
             android:id="@+id/editNombreUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
             android:layout_marginBottom="8dp"
             android:ems="10"
             android:hint="Nombre de usuario"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName" />-->
 
         <EditText
             android:id="@+id/editContraseña"
