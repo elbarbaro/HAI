@@ -7,6 +7,13 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="mensaje_diagnostico">Por favor llena los espacios en blanco</string>
     <string name="mensaje_grafica_vacia">¡No has ingresado tus datos todavía!</string>
-
+    <string-array name="array_categorias">
+        <item>Transporte</item>
+        <item>Educacion</item>
+        <item>Comida</item>
+        <item>Entretenimiento</item>
+        <item>Jubilación</item>
+    </string-array>
 </resources>

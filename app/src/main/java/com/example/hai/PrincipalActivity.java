@@ -1,5 +1,7 @@
 package com.example.hai;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +15,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrincipalActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -23,15 +34,6 @@ public class PrincipalActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -40,6 +42,26 @@ public class PrincipalActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        PieChart pieChart = findViewById(R.id.graficaCategorias);
+        String[] categories = getResources().getStringArray(R.array.array_categorias);
+
+        int colorHome = Color.rgb(255, 145, 63);
+        int[] colors = {
+               colorHome, Color.rgb(190, 149, 224), R.color.colorGrafica3,
+                R.color.colorGrafica4, R.color.colorGrafica5, R.color.colorGrafica6};
+
+        List<PieEntry> list = new ArrayList<>();
+
+        for(String categoria: categories){
+            list.add(new PieEntry(25.0f, categoria));
+        }
+
+        PieDataSet pieDataSet =  new PieDataSet(list, "Categorias");
+        pieDataSet.setColors(colors);
+        PieData pieData = new PieData(pieDataSet);
+        pieChart.setData(pieData);
+        pieChart.invalidate();
     }
 
     @Override
@@ -67,7 +89,7 @@ public class PrincipalActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.Gastos) {
             return true;
         }
 
@@ -80,22 +102,31 @@ public class PrincipalActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.Cerrar_sesion) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.historial) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.Gastos) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.Cupones) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.Configuraciones) {
 
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.Meta){
+            navegarPantallaMeta();
+            // Esto llama el metodo que esta escrito abajo que me permite cambiar de pantalla
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+
+    }
+
+    public void navegarPantallaMeta(){
+        // Con estas intrucciones doy a una pantalla nueva
+        Intent pantallaMeta = new Intent(this, MetaActivity.class);
+        startActivity(pantallaMeta);
     }
 }
+
