@@ -3,9 +3,6 @@ package com.example.hai;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,7 +16,6 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,10 +42,18 @@ public class PrincipalActivity extends AppCompatActivity
         PieChart pieChart = findViewById(R.id.graficaCategorias);
         String[] categories = getResources().getStringArray(R.array.array_categorias);
 
-        int colorHome = Color.rgb(255, 145, 63);
+        int colorJubilacion = Color.rgb(255, 145, 63);
+        int colorComida = Color.rgb(255,145,63);
+        int colorEntretenimiento = Color.rgb(255,209,67);
+        int colorEducacion = Color.rgb(0,187,212);
+        int colorTrasporte = Color.rgb(190,149,224);
+
         int[] colors = {
-               colorHome, Color.rgb(190, 149, 224), R.color.colorGrafica3,
-                R.color.colorGrafica4, R.color.colorGrafica5, R.color.colorGrafica6};
+               colorJubilacion, Color.rgb(255, 145, 63),
+                colorComida,Color.rgb(255,145,63),
+                colorEducacion, Color.rgb(0,187,212),
+                colorEntretenimiento, Color.rgb(255,209,67),
+                colorTrasporte, Color.rgb(190,149,224),};
 
         List<PieEntry> list = new ArrayList<>();
 
@@ -89,7 +93,7 @@ public class PrincipalActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.Gastos) {
+        if (id == R.id.Registro) {
             return true;
         }
 
@@ -103,10 +107,12 @@ public class PrincipalActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.Cerrar_sesion) {
+            cerrasSesion();
             // Handle the camera action
         } else if (id == R.id.historial) {
 
-        } else if (id == R.id.Gastos) {
+        } else if (id == R.id.registro) {
+            navegarPantallaDiagnostico();
 
         } else if (id == R.id.Cupones) {
 
@@ -127,6 +133,16 @@ public class PrincipalActivity extends AppCompatActivity
         // Con estas intrucciones doy a una pantalla nueva
         Intent pantallaMeta = new Intent(this, MetaActivity.class);
         startActivity(pantallaMeta);
+    }
+
+    public void cerrasSesion(){
+        Intent pantallaInicio = new Intent(this, LoginActivity.class);
+        startActivity(pantallaInicio);
+    }
+
+    public void navegarPantallaDiagnostico(){
+        Intent pantallaDiagnostico = new Intent(this, DiagnosticoActivity.class);
+        startActivity(pantallaDiagnostico);
     }
 }
 

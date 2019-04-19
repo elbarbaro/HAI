@@ -51,7 +51,8 @@
             android:id="@+id/txtPreguntaMeta1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:padding="8dp"
             android:text="¿Para que quieres ahorrar?"
             android:textColor="@android:color/black"
@@ -70,7 +71,8 @@
             android:id="@+id/txtPreguntaMeta2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:padding="8dp"
             android:text="¿Cuanto necesitas ahorrar?"
             android:textColor="@android:color/black"
@@ -89,7 +91,8 @@
             android:id="@+id/txtPreguntaMeta3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:padding="8dp"
             android:text="¿En cuanto tiempo deseas ahorrarlo?"
             android:textColor="@android:color/black"
@@ -108,9 +111,9 @@
             android:id="@+id/btnAgregar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="40dp"
+            android:layout_margin="30dp"
             android:background="@color/colorPrimary"
-            android:text="Agregar"
-            android:onClick="agregarMeta"/>
+            android:onClick="agregarMeta"
+            android:text="Agregar" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

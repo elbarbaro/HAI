@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hai.models.Categoria;
+
 public class EntretenimientoActivity extends AppCompatActivity {
 
     @Override
@@ -15,9 +17,9 @@ public class EntretenimientoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entretenimiento);
 
-        String categoria = getIntent().getStringExtra("nombre_categoria");
+        final String nombreCategoria = getIntent().getStringExtra("nombre_categoria");
         TextView txtCategoria = findViewById(R.id.txtEntretenimiento);
-        txtCategoria.setText(categoria);
+        txtCategoria.setText(nombreCategoria);
         final EditText editCantidad = findViewById(R.id.editCantidad);
         final EditText editCantidadDeseada = findViewById(R.id.editCantidadDeseada);
         Button btnTerminar = findViewById(R.id.btnTerminar);
@@ -30,10 +32,20 @@ public class EntretenimientoActivity extends AppCompatActivity {
                 if (!cantidad.isEmpty()&& !cantidadDeseada.isEmpty()){
                     float fCantidad = Float.parseFloat(cantidad);
                     float fCantidadDeseada = Float.parseFloat(cantidadDeseada);
+                    if (fCantidad>0 && fCantidadDeseada>0){
+                        Categoria categoria = new Categoria(nombreCategoria,fCantidad,fCantidadDeseada);
 
-                    // todo falta guardar los valores en share preferences
+                        // Eres temporal jejeje
+                        Toast.makeText(getApplicationContext(), "NombreCategoria: " +categoria.getNombre() +
+                              " Cantidad: " +categoria.getCantidad() +
+                              " CantidadDeseada: " +categoria.getCantidadDeseada(), Toast.LENGTH_LONG).show();
+                        // todo falta guardar los valores en share preferences
+                    }else {
+                        Toast.makeText(getApplicationContext(),"Ingresa una cantidad mayor a cero", Toast.LENGTH_SHORT).show();
+                    }
+
                 } else {
-                    Toast.makeText(getApplicationContext(),"Compa por favor llena los datos en blanco", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Por favor completa los espacios en blanco", Toast.LENGTH_SHORT).show();
                 }
             }
         });
