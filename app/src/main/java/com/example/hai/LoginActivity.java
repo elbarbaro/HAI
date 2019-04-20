@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.hai.sesion.GCEASesion;
 
 public class LoginActivity extends AppCompatActivity {
+    public static final String FILE_NAME = "haidata";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        boolean estaRegistrado = GCEASesion.leerBoolean(getPreferences(Context.MODE_PRIVATE), "estaRegistrado");
+        boolean estaRegistrado = GCEASesion.leerBoolean(getSharedPreferences(FILE_NAME, 0), "estaRegistrado");
         if (estaRegistrado)
             pantallaPrincipal();
     }

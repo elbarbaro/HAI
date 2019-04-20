@@ -1,5 +1,6 @@
 package com.example.hai;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hai.models.Categoria;
+import com.example.hai.sesion.GCEASesion;
 
 public class EntretenimientoActivity extends AppCompatActivity {
 
@@ -35,10 +37,10 @@ public class EntretenimientoActivity extends AppCompatActivity {
                     if (fCantidad>0 && fCantidadDeseada>0){
                         Categoria categoria = new Categoria(nombreCategoria,fCantidad,fCantidadDeseada);
 
+                        GCEASesion.guardarStringEnLista(getSharedPreferences(LoginActivity.FILE_NAME, 0), "categorias", categoria.toString());
+
                         // Eres temporal jejeje
-                        Toast.makeText(getApplicationContext(), "NombreCategoria: " +categoria.getNombre() +
-                              " Cantidad: " +categoria.getCantidad() +
-                              " CantidadDeseada: " +categoria.getCantidadDeseada(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), categoria.toString(), Toast.LENGTH_LONG).show();
                         // todo falta guardar los valores en share preferences
                     }else {
                         Toast.makeText(getApplicationContext(),"Ingresa una cantidad mayor a cero", Toast.LENGTH_SHORT).show();

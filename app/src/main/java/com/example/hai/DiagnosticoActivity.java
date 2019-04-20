@@ -14,6 +14,14 @@ public class DiagnosticoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_diagnostico);
         Button btnOmitir = findViewById(R.id.btnOmitir);
         Button btnContinuar = findViewById(R.id.btnContinuar);
+        Button btnDatosDiagnostico = findViewById(R.id.btnDatosFinancieros);
+
+        btnDatosDiagnostico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirDatosFinancieros();
+            }
+        });
 
         btnOmitir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,5 +59,10 @@ public class DiagnosticoActivity extends AppCompatActivity {
 
     }
 
+
+    public void abrirDatosFinancieros(){
+        Intent pantallaDatosFinancieros = new Intent(this, DatosFinancierosActivity.class);
+        startActivity(pantallaDatosFinancieros);
+    }
 
 }

@@ -2,6 +2,7 @@ package com.example.hai;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,11 +34,12 @@ public class RegistroActivity extends AppCompatActivity {
                 String correo = editCorreo.getText().toString();
                 String contrasena = editContrasena.getText().toString();
                 if (!nombre.isEmpty() && !fechaNacimiento.isEmpty() && !correo.isEmpty() && !contrasena.isEmpty()){
-                    GCEASesion.guardarString(getPreferences(Context.MODE_PRIVATE), "nombre", nombre );
-                    GCEASesion.guardarString(getPreferences(Context.MODE_PRIVATE), "fechaNacimiento", fechaNacimiento);
-                    GCEASesion.guardarString(getPreferences(Context.MODE_PRIVATE), "correo", correo);
+                    SharedPreferences preferences = getSharedPreferences(LoginActivity.FILE_NAME, 0);
+                    GCEASesion.guardarString(preferences, "nombre", nombre );
+                    GCEASesion.guardarString(preferences, "fechaNacimiento", fechaNacimiento);
+                    GCEASesion.guardarString(preferences, "correo", correo);
 
-                    GCEASesion.guardarBoolean(getPreferences(Context.MODE_PRIVATE),"estaRegistrado", true);
+                    GCEASesion.guardarBoolean(preferences,"estaRegistrado", true);
                     // Todo implementar almacenamiento de datos
                     cerrarRegistro();
 

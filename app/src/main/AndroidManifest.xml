@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MetaActivity"></activity>
+        <activity android:name=".DatosFinancierosActivity"></activity>
+        <activity android:name=".MetaActivity" />
         <activity android:name=".TransporteActivity" />
         <activity android:name=".JubilaciónActivity" />
         <activity android:name=".EntretenimientoActivity" />
@@ -18,14 +19,12 @@
         <activity
             android:name=".PrincipalActivity"
             android:label="@string/title_activity_principal"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".DiagnosticoActivity">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".DiagnosticoActivity"></activity>
         <activity android:name=".PerfilActivity" />
         <activity android:name=".CuponActivity" />
-        <activity android:name=".RegistroActivity"></activity>
-        <activity android:name=".LoginActivity" >
+        <activity android:name=".RegistroActivity" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

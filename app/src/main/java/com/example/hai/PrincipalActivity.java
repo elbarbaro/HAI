@@ -1,6 +1,8 @@
 package com.example.hai;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -11,14 +13,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.example.hai.models.Categoria;
+import com.example.hai.sesion.GCEASesion;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class PrincipalActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,7 +49,6 @@ public class PrincipalActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         PieChart pieChart = findViewById(R.id.graficaCategorias);
-        String[] categories = getResources().getStringArray(R.array.array_categorias);
 
         int colorJubilacion = Color.rgb(255, 145, 63);
         int colorComida = Color.rgb(255,145,63);
@@ -49,17 +57,37 @@ public class PrincipalActivity extends AppCompatActivity
         int colorTrasporte = Color.rgb(190,149,224);
 
         int[] colors = {
-               colorJubilacion, Color.rgb(255, 145, 63),
-                colorComida,Color.rgb(255,145,63),
-                colorEducacion, Color.rgb(0,187,212),
-                colorEntretenimiento, Color.rgb(255,209,67),
-                colorTrasporte, Color.rgb(190,149,224),};
+               colorJubilacion,
+                colorComida,
+                colorEducacion,
+                colorEntretenimiento,
+                colorTrasporte
+        };
+
+        Set<String> categorias = GCEASesion.leerLista(getSharedPreferences(LoginActivity.FILE_NAME,0), "categorias");
+
 
         List<PieEntry> list = new ArrayList<>();
 
-        for(String categoria: categories){
-            list.add(new PieEntry(25.0f, categoria));
+        if (categorias != null) {
+            for(String categoria: categorias){
+
+                try {
+                    JSONObject jsonObject = new JSONObject(categoria);
+                    String nombre = jsonObject.getString("nombre");
+                    float cantidad = (float) jsonObject.getDouble("cantidad");
+                    float cantidadDeseada = (float) jsonObject.getDouble("cantidadDeseada");
+
+                    Categoria datosCategoria = new Categoria(nombre, cantidad, cantidadDeseada);
+                    list.add(new PieEntry(datosCategoria.getCantidad(), datosCategoria.getNombre()));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                Toast.makeText(getApplicationContext(),categoria, Toast.LENGTH_SHORT).show();
+            }
         }
+
 
         PieDataSet pieDataSet =  new PieDataSet(list, "Categorias");
         pieDataSet.setColors(colors);

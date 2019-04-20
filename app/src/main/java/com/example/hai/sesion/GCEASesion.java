@@ -2,6 +2,9 @@ package com.example.hai.sesion;
 
 import android.content.SharedPreferences;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class GCEASesion {
 
     public static void guardarString(SharedPreferences preferences, String nombreValor, String valor){
@@ -32,5 +35,20 @@ public class GCEASesion {
 
     public static boolean leerBoolean (SharedPreferences preferences, String nombreValor){
         return preferences.getBoolean(nombreValor, false);
+    }
+
+    public static void guardarStringEnLista(SharedPreferences preferences, String nombreValor, String valor){
+        Set<String> categorias = preferences.getStringSet(nombreValor, null);
+        if (categorias == null) {
+            categorias = new HashSet<>();
+        }
+
+        categorias.add(valor);
+
+        preferences.edit().putStringSet(nombreValor, categorias).apply();
+    }
+
+    public static Set<String> leerLista(SharedPreferences preferences, String nombreValor){
+        return preferences.getStringSet(nombreValor, null);
     }
 }

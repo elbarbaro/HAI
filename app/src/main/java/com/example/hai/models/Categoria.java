@@ -1,5 +1,7 @@
 package com.example.hai.models;
 
+import androidx.annotation.NonNull;
+
 public class Categoria {
 
     String nombre;
@@ -37,4 +39,11 @@ public class Categoria {
     public void setCantidadDeseada(float cantidadDeseada){
         this.cantidadDeseada = cantidadDeseada;
     }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "{\"nombre\": " +"\""+nombre+"\",\"cantidad\":  " +cantidad+",\"cantidadDeseada\": " +cantidadDeseada+"}";
+    }
 }
+
