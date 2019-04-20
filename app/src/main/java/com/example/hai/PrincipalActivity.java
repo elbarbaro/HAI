@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hai.models.Categoria;
@@ -38,6 +40,9 @@ public class PrincipalActivity extends AppCompatActivity
         setContentView(R.layout.activity_principal);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        TextView txtMensajeGrafica = findViewById(R.id.txt_mensajeGrafica);
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -47,10 +52,19 @@ public class PrincipalActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View headerView = navigationView.getHeaderView(0);
+        TextView txtNombre = headerView.findViewById(R.id.txtNombre);
+        TextView txtCorreo = headerView.findViewById(R.id.txtCorreo);
+        SharedPreferences preferences = getSharedPreferences(LoginActivity.FILE_NAME,0);
+
+        String nombreUsuario = GCEASesion.leerString(preferences, "nombre");
+        txtNombre.setText(nombreUsuario);
+        String correo = GCEASesion.leerString(preferences, "correo");
+        txtCorreo.setText(correo);
 
         PieChart pieChart = findViewById(R.id.graficaCategorias);
 
-        int colorJubilacion = Color.rgb(255, 145, 63);
+        int colorJubilacion = Color.rgb(255, 159, 88);
         int colorComida = Color.rgb(255,145,63);
         int colorEntretenimiento = Color.rgb(255,209,67);
         int colorEducacion = Color.rgb(0,187,212);
@@ -70,6 +84,7 @@ public class PrincipalActivity extends AppCompatActivity
         List<PieEntry> list = new ArrayList<>();
 
         if (categorias != null) {
+            txtMensajeGrafica.setText("");
             for(String categoria: categorias){
 
                 try {
@@ -164,6 +179,7 @@ public class PrincipalActivity extends AppCompatActivity
     }
 
     public void cerrasSesion(){
+        GCEASesion.limpiarDatos(getSharedPreferences(LoginActivity.FILE_NAME,0));
         Intent pantallaInicio = new Intent(this, LoginActivity.class);
         startActivity(pantallaInicio);
     }

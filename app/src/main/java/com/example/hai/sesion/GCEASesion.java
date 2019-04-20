@@ -51,4 +51,8 @@ public class GCEASesion {
     public static Set<String> leerLista(SharedPreferences preferences, String nombreValor){
         return preferences.getStringSet(nombreValor, null);
     }
+
+    public static void limpiarDatos(SharedPreferences preferences){
+        preferences.edit().clear().apply();
+    }
 }

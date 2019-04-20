@@ -12,7 +12,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".DatosFinancierosActivity"></activity>
         <activity android:name=".MetaActivity" />
-        <activity android:name=".TransporteActivity" />
         <activity android:name=".JubilaciónActivity" />
         <activity android:name=".EntretenimientoActivity" />
         <activity android:name=".DiagComidaActivity" />

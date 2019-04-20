@@ -26,6 +26,7 @@ public class EntretenimientoActivity extends AppCompatActivity {
         final EditText editCantidadDeseada = findViewById(R.id.editCantidadDeseada);
         Button btnTerminar = findViewById(R.id.btnTerminar);
 
+
         btnTerminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,10 +39,10 @@ public class EntretenimientoActivity extends AppCompatActivity {
                         Categoria categoria = new Categoria(nombreCategoria,fCantidad,fCantidadDeseada);
 
                         GCEASesion.guardarStringEnLista(getSharedPreferences(LoginActivity.FILE_NAME, 0), "categorias", categoria.toString());
+                        finish();
 
                         // Eres temporal jejeje
-                        Toast.makeText(getApplicationContext(), categoria.toString(), Toast.LENGTH_LONG).show();
-                        // todo falta guardar los valores en share preferences
+                        //Toast.makeText(getApplicationContext(), categoria.toString(), Toast.LENGTH_LONG).show();
                     }else {
                         Toast.makeText(getApplicationContext(),"Ingresa una cantidad mayor a cero", Toast.LENGTH_SHORT).show();
                     }
