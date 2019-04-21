@@ -57,6 +57,33 @@
             android:textColor="@android:color/black"
             android:textSize="15sp" />
 
+        <RadioGroup
+            android:id="@+id/rgDedica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rbtnTrabajo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Trabajo" />
+
+            <RadioButton
+                android:id="@+id/rbtnEstudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Estudio" />
+
+            <RadioButton
+                android:id="@+id/rbtnAmbos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ambos" />
+        </RadioGroup>
+
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"

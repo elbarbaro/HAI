@@ -51,7 +51,7 @@ public class RegistroActivity extends AppCompatActivity {
     }
 
     public void cerrarRegistro(){
-        Intent pantallaPrincipal = new Intent (this, PrincipalActivity.class);
-        startActivity(pantallaPrincipal);
+        Intent pantallaDiagnostico = new Intent (this, DiagnosticoActivity.class);
+        startActivity(pantallaDiagnostico);
     }
 }

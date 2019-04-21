@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class DiagnosticoActivity extends AppCompatActivity {
 
@@ -15,6 +16,15 @@ public class DiagnosticoActivity extends AppCompatActivity {
         Button btnOmitir = findViewById(R.id.btnOmitir);
         Button btnContinuar = findViewById(R.id.btnContinuar);
         Button btnDatosDiagnostico = findViewById(R.id.btnDatosFinancieros);
+        TextView txtTitulo = findViewById(R.id.txtTitulo);
+        TextView txtMensaje = findViewById(R.id.txtMensaje);
+        String titulo = getIntent().getStringExtra("titulo");
+        String mensaje = getIntent().getStringExtra("mensaje");
+        if (titulo != null && mensaje != null){
+            txtTitulo.setText(titulo);
+            txtMensaje.setText(mensaje);
+        }
+
 
         btnDatosDiagnostico.setOnClickListener(new View.OnClickListener() {
             @Override

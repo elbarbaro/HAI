@@ -38,7 +38,7 @@ public class EntretenimientoActivity extends AppCompatActivity {
                     if (fCantidad>0 && fCantidadDeseada>0){
                         Categoria categoria = new Categoria(nombreCategoria,fCantidad,fCantidadDeseada);
 
-                        GCEASesion.guardarStringEnLista(getSharedPreferences(LoginActivity.FILE_NAME, 0), "categorias", categoria.toString());
+                        GCEASesion.guardarStringEnLista(getSharedPreferences(LoginActivity.FILE_NAME, 0), "categorias", categoria.toString(), nombreCategoria);
                         finish();
 
                         // Eres temporal jejeje

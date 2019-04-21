@@ -161,6 +161,9 @@ public class PrincipalActivity extends AppCompatActivity
 
     public void navegarPantallaDiagnostico(){
         Intent pantallaDiagnostico = new Intent(this, DiagnosticoActivity.class);
+        // Aqui se esta guardando dos valores String (titulo, mensaje) con valores String
+        pantallaDiagnostico.putExtra("titulo", getResources().getString(R.string.titulo_mensaje_registro));
+        pantallaDiagnostico.putExtra("mensaje", getResources().getString(R.string.mensaje_registro));
         startActivity(pantallaDiagnostico);
     }
     public void navegarPantallaMetas(){

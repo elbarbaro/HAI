@@ -61,6 +61,7 @@ public class ListaMetasActivity extends AppCompatActivity implements MetaAdapter
         List<Meta> lista = new ArrayList<>();
         Set<String> listaMetas = GCEASesion.leerLista(getSharedPreferences(LoginActivity.FILE_NAME, 0), "ListaMetas");
         if (listaMetas != null){
+            // For me permite recuperar Strings de mi listaMetas, en una nueva variable llamada meta de tipo String
             for (String meta: listaMetas){
                 try {
                     JSONObject jsonObject = new JSONObject(meta);
@@ -90,6 +91,7 @@ public class ListaMetasActivity extends AppCompatActivity implements MetaAdapter
     @Override
     public void onItemClick(Meta meta) {
         Intent pantallaMeta = new Intent(this, MetaActivity.class);
+        //Esto es para mandar datos en un Intent para una nueva pantalla
         pantallaMeta.putExtra("razon", meta.getRazon());
         pantallaMeta.putExtra("cantidad", meta.getCantidad());
         pantallaMeta.putExtra("tiempo", meta.getTiempo());

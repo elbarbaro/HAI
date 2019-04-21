@@ -1,16 +1,43 @@
 <resources>
-    <string name="app_name">HAI</string>
-    <string name="title_activity_principal">PrincipalActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string name="mensaje_diagnostico">Por favor llena los espacios en blanco</string>
-    <string name="mensaje_grafica_vacia">¡No has ingresado tus datos todavía!</string>
+    <string name="app_name" translatable="false">HAI</string>
+    <string name="title_activity_principal" translatable="false">PrincipalActivity</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="mensaje_diagnostico" translatable="false">Por favor llena los espacios en blanco</string>
+    <string name="mensaje_grafica_vacia" translatable="false">¡No has ingresado tus datos todavía!</string>
+    <string name="titulo_mensaje_registro" translatable="false">Registro</string>
+    <string name="mensaje_registro" translatable="false">No olvides actualizar tus datos</string>
     <string-array name="lista_consejos">
-        <item></item>
+        <item>Tener una meta es una forma de motivarse a ahorrar, ¿porque no lo intentas?</item>
+        <item>Si distingues entre necesidad y deseo evitas compras innecesarias</item>
+        <item>Puedes vender lo que ya no utilices para generar más ingresos</item>
+        <item>Compra ropa basica, nunca pasa de moda</item>
+        <item>Maneja un presupuesto ayuda a una mejor organización</item>
+        <item>Si comes en casa, o preparas tu alimento desde antes te ahorras un gasto innecesario</item>
+        <item>Compara precios regularmente para elegir concientemente donde compras</item>
+        <item>Prioriza tus gastos para establecer un buen presupuesto</item>
+        <item>Sal a la calle con el dinero justo que necesitas, asi evitas compras compulsivas</item>
+        <item>¡Guarda tus cambios!</item>
+        <item>Restrige el uso de las tarjetas de credito</item>
+        <item>El transporte publico es mas barato, pero también más tardado: aprovecha ese tiempo</item>
+        <item>¡Aplica la regla de los 10 segundos! Cuando veas algo tentador, detente, respira
+            y si despues de 10 segundos no hay una razón contundente para comprarlo, sigue tu camino</item>
+        <item>Considera ejercitarte en casa y ahorrar la cuota del gimnasio</item>
+        <item>Organiza reuniones en casa en lugar de salir, asi todos ahorraran un monton de dinero </item>
+        <item>El 8% del dinero existe en forma física, el resto se encuentra en manera electronica</item>
+        <item>Actualmente hay unas 170 monedas diferentes en el mundo</item>
+        <item>La palabra "salario" tiene sus origenes en la epoca egipcia</item>
+        <item>El billete se creo en China en el siglo VII</item>
+        <item>La primera Casa de Moneda en América fue la de México, fundada en 1535</item>
+        <item>La contabilidad tiene más de 5,000 años, ¿qué esperas para aprenderla?</item>
+        <item>El IRPF es un invento inglés, pues la guerra con Francia era demasiado cara, por lo que crearon el impuesto sobre la renta</item>
+        <item>Las inversiones son consideradas como pasivos hasta que no generan beneficios</item>
+        <item>La base de una buena economia esta en tener más activos que pasivos</item>
+        <item>En México tan solo el 1% de los jovenes ahorran para su retiro, ¿y tú?¿ya probaste la función de jubilación?</item>
     </string-array>
     <string-array name="array_categorias">
         <item>Transporte</item>
