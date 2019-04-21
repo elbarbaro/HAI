@@ -63,8 +63,9 @@ public class PrincipalActivity extends AppCompatActivity
         txtCorreo.setText(correo);
 
         PieChart pieChart = findViewById(R.id.graficaCategorias);
+        pieChart.setNoDataText("");
 
-        int colorJubilacion = Color.rgb(255, 159, 88);
+        int colorJubilacion = Color.rgb(255, 159, 191);
         int colorComida = Color.rgb(255,145,63);
         int colorEntretenimiento = Color.rgb(255,209,67);
         int colorEducacion = Color.rgb(0,187,212);
@@ -162,7 +163,7 @@ public class PrincipalActivity extends AppCompatActivity
         } else if (id == R.id.Configuraciones) {
 
         } else if (id == R.id.Meta){
-            navegarPantallaMeta();
+            navegarPantallaMetas();
             // Esto llama el metodo que esta escrito abajo que me permite cambiar de pantalla
         }
 
@@ -170,12 +171,6 @@ public class PrincipalActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
 
-    }
-
-    public void navegarPantallaMeta(){
-        // Con estas intrucciones doy a una pantalla nueva
-        Intent pantallaMeta = new Intent(this, MetaActivity.class);
-        startActivity(pantallaMeta);
     }
 
     public void cerrasSesion(){
@@ -187,6 +182,11 @@ public class PrincipalActivity extends AppCompatActivity
     public void navegarPantallaDiagnostico(){
         Intent pantallaDiagnostico = new Intent(this, DiagnosticoActivity.class);
         startActivity(pantallaDiagnostico);
+    }
+    public void navegarPantallaMetas(){
+        // Con estas intrucciones doy a una pantalla nueva
+        Intent pantallaMetas = new Intent(this, ListaMetasActivity.class);
+        startActivity(pantallaMetas);
     }
 }
 

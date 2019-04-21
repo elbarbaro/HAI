@@ -44,7 +44,7 @@ public class GCEASesion {
         }
 
         categorias.add(valor);
-
+        preferences.edit().remove(nombreValor).apply();
         preferences.edit().putStringSet(nombreValor, categorias).apply();
     }
 
