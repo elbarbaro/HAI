@@ -80,7 +80,9 @@ public class PrincipalActivity extends AppCompatActivity
         imgPerfil = headerView.findViewById(R.id.imgPerfil);
         String rutaImagen = GCEASesion.leerString(getSharedPreferences(LoginActivity.FILE_NAME, 0), "rutaImagen");
         if (!rutaImagen.isEmpty()){
-            Bitmap bitmap = BitmapFactory.decodeFile(rutaImagen);
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 2;
+            Bitmap bitmap = BitmapFactory.decodeFile(rutaImagen, options);
             imgPerfil.setImageBitmap(bitmap);
         }
         SharedPreferences preferences = getSharedPreferences(LoginActivity.FILE_NAME,0);
@@ -165,10 +167,12 @@ public class PrincipalActivity extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == Camera.REQUEST_TAKE_PHOTO){
-            Bitmap bitmap = camera.getCameraBitmap();
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 2;
+            Bitmap bitmap = BitmapFactory.decodeFile(camera.resizeAndGetCameraBitmapPath(80), options);
             if (bitmap != null){
                 imgPerfil.setImageBitmap(bitmap);
-                String rutaImagen = camera.getCameraBitmapPath();
+                String rutaImagen = camera.resizeAndGetCameraBitmapPath(80);
                 GCEASesion.guardarString(getSharedPreferences(LoginActivity.FILE_NAME, 0), "rutaImagen", rutaImagen);
             } else {
               Toast.makeText(getApplicationContext(), "Hubo un error al tomar la foto", Toast.LENGTH_LONG).show();
@@ -300,7 +304,7 @@ public class PrincipalActivity extends AppCompatActivity
                 camera.takePicture();
             }
 
-        } catch (IllegalAccessException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(getApplicationContext(), "No se puede abrir la camara", Toast.LENGTH_SHORT).show();
         }

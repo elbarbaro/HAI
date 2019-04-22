@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:ems="10"
-            android:inputType="number|textPersonName"
+            android:inputType="number"
             android:textColor="@android:color/black" />
 
         <Button
