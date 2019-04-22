@@ -11,9 +11,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +32,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 public class PrincipalActivity extends AppCompatActivity
@@ -101,7 +105,7 @@ public class PrincipalActivity extends AppCompatActivity
                     e.printStackTrace();
                 }
 
-                Toast.makeText(getApplicationContext(),categoria, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),categoria, Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -111,6 +115,8 @@ public class PrincipalActivity extends AppCompatActivity
         PieData pieData = new PieData(pieDataSet);
         pieChart.setData(pieData);
         pieChart.invalidate();
+
+        mostrarConsejo();
     }
 
     @Override
@@ -170,6 +176,25 @@ public class PrincipalActivity extends AppCompatActivity
         // Con estas intrucciones doy a una pantalla nueva
         Intent pantallaMetas = new Intent(this, ListaMetasActivity.class);
         startActivity(pantallaMetas);
+    }
+
+    public void mostrarConsejo(){
+        String[] listaConsejos = getResources().getStringArray(R.array.lista_consejos);
+        int numeroAliatorio = new Random().nextInt(listaConsejos.length);
+        String consejo = listaConsejos[numeroAliatorio];
+        LayoutInflater layoutInflater = getLayoutInflater();
+        View dialogoConsejo = layoutInflater.inflate(R.layout.dialog_consejo,(ViewGroup) findViewById(R.id.container));
+        TextView txtConsejo = dialogoConsejo.findViewById(R.id.txtConsejos);
+        // Aqui pongo un texto en un TextView
+        txtConsejo.setText(consejo);
+        // Esto es un Toast personalizado. Se le pone una vista, una duracion y que sea visible
+        Toast toast = new Toast(getApplicationContext());
+        /*ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialogoConsejo.setLayoutParams(params);*/
+        toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(dialogoConsejo);
+        toast.show();
     }
 }
 

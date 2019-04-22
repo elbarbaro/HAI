@@ -13,7 +13,7 @@
     <item
         android:id="@+id/Cupones"
         android:title="Cupones"
-        android:icon="@drawable/cupon"/>
+        android:icon="@drawable/cupones"/>
     <item
         android:id="@+id/Configuraciones"
         android:title="Configuraciones"
