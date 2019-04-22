@@ -44,7 +44,7 @@ public class RegistroActivity extends AppCompatActivity {
                     cerrarRegistro();
 
                 } else {
-                    Toast.makeText(getApplicationContext(),"Por favor llena los datos en blanco", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Por favor completa los espacios en blanco", Toast.LENGTH_SHORT).show();
                 }
             }
         });

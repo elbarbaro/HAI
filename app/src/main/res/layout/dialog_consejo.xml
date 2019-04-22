@@ -5,7 +5,8 @@
     android:id="@+id/container"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#70E2E2E2">
 
     <ImageView
         android:id="@+id/image"
@@ -17,7 +18,7 @@
 
     <TextView
         android:id="@+id/txtConsejos"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"

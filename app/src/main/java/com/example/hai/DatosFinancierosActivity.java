@@ -28,7 +28,7 @@ public class DatosFinancierosActivity extends AppCompatActivity {
                         GCEASesion.guardarFloat(getSharedPreferences(LoginActivity.FILE_NAME, 0),"ingresos", fIngreso );
                         finish();
                     } else {
-                        Toast.makeText(getApplicationContext(), "Por favor ingresa una dato mayor a cero", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Ingresa una cantidad mayor a cero", Toast.LENGTH_SHORT).show();
                     }
 
                 } else {

@@ -38,6 +38,8 @@ import java.util.Set;
 public class PrincipalActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static final int DURACION_CONSEJO = 8000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +68,7 @@ public class PrincipalActivity extends AppCompatActivity
         txtNombre.setText(nombreUsuario);
         String correo = GCEASesion.leerString(preferences, "correo");
         txtCorreo.setText(correo);
+        float ingresos = GCEASesion.leerFloat(preferences, "ingresos");
 
         PieChart pieChart = findViewById(R.id.graficaCategorias);
         pieChart.setNoDataText("");
@@ -75,13 +78,15 @@ public class PrincipalActivity extends AppCompatActivity
         int colorEntretenimiento = Color.rgb(255,209,67);
         int colorEducacion = Color.rgb(0,187,212);
         int colorTrasporte = Color.rgb(190,149,224);
+        int colorAhorro = Color.rgb(182, 255, 69);
 
         int[] colors = {
                colorJubilacion,
                 colorComida,
                 colorEducacion,
                 colorEntretenimiento,
-                colorTrasporte
+                colorTrasporte,
+                colorAhorro
         };
 
         Set<String> categorias = GCEASesion.leerLista(getSharedPreferences(LoginActivity.FILE_NAME,0), "categorias");
@@ -91,21 +96,36 @@ public class PrincipalActivity extends AppCompatActivity
 
         if (categorias != null) {
             txtMensajeGrafica.setText("");
+            float sumaCantidad = 0;
             for(String categoria: categorias){
 
                 try {
                     JSONObject jsonObject = new JSONObject(categoria);
                     String nombre = jsonObject.getString("nombre");
                     float cantidad = (float) jsonObject.getDouble("cantidad");
+                    // Aqui se realiza la suma de las cantidades de manera ciclica.
+                    sumaCantidad = sumaCantidad + cantidad;
                     float cantidadDeseada = (float) jsonObject.getDouble("cantidadDeseada");
 
                     Categoria datosCategoria = new Categoria(nombre, cantidad, cantidadDeseada);
+                    // Aqui se estan guardando los datos de categoria como entradas de datos para la grafica de pie.
                     list.add(new PieEntry(datosCategoria.getCantidad(), datosCategoria.getNombre()));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
                 //Toast.makeText(getApplicationContext(),categoria, Toast.LENGTH_SHORT).show();
+            }
+
+            if (ingresos > 0){
+
+                //Aqui se realiza la operacion para calcular el ahorro
+                float resultado = ingresos - sumaCantidad;
+                // Cree una categoria que guardara la informacion del ahorro
+                Categoria ahorro = new Categoria("Ahorro", resultado,0 );
+                //Aqui le mande los datos del ahorro a la grafica
+                list.add(new PieEntry(ahorro.getCantidad(), ahorro.getNombre()));
+
             }
         }
 
@@ -145,6 +165,7 @@ public class PrincipalActivity extends AppCompatActivity
             navegarPantallaDiagnostico();
 
         } else if (id == R.id.Cupones) {
+            abrirPantallaCupon();
 
         } else if (id == R.id.Configuraciones) {
 
@@ -195,6 +216,11 @@ public class PrincipalActivity extends AppCompatActivity
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(dialogoConsejo);
         toast.show();
+    }
+
+    public void abrirPantallaCupon(){
+        Intent pantallaCupon = new Intent(this, CuponActivity.class);
+        startActivity(pantallaCupon);
     }
 }
 

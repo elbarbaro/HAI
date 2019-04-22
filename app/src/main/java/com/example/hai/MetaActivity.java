@@ -48,7 +48,7 @@ public class MetaActivity extends AppCompatActivity {
                 finish();
 
             } else {
-                Toast.makeText(getApplicationContext(), "Agrega una cantidad mayor a cero", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Ingresa una cantidad mayor a cero", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(getApplicationContext(), "Por favor ingresa los datos", Toast.LENGTH_SHORT).show();
