@@ -1,11 +1,18 @@
 package com.example.hai;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +34,7 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.mindorks.paracamera.Camera;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,10 +44,16 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+
+
 public class PrincipalActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static final int CODIGO_CAMARA = 5002;
     public static final int DURACION_CONSEJO = 8000;
+    private Camera camera;
+    private ImageView imgPerfil;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +77,12 @@ public class PrincipalActivity extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         TextView txtNombre = headerView.findViewById(R.id.txtNombre);
         TextView txtCorreo = headerView.findViewById(R.id.txtCorreo);
+        imgPerfil = headerView.findViewById(R.id.imgPerfil);
+        String rutaImagen = GCEASesion.leerString(getSharedPreferences(LoginActivity.FILE_NAME, 0), "rutaImagen");
+        if (!rutaImagen.isEmpty()){
+            Bitmap bitmap = BitmapFactory.decodeFile(rutaImagen);
+            imgPerfil.setImageBitmap(bitmap);
+        }
         SharedPreferences preferences = getSharedPreferences(LoginActivity.FILE_NAME,0);
 
         String nombreUsuario = GCEASesion.leerString(preferences, "nombre");
@@ -137,6 +158,38 @@ public class PrincipalActivity extends AppCompatActivity
         pieChart.invalidate();
 
         mostrarConsejo();
+        iniciarCamara();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == Camera.REQUEST_TAKE_PHOTO){
+            Bitmap bitmap = camera.getCameraBitmap();
+            if (bitmap != null){
+                imgPerfil.setImageBitmap(bitmap);
+                String rutaImagen = camera.getCameraBitmapPath();
+                GCEASesion.guardarString(getSharedPreferences(LoginActivity.FILE_NAME, 0), "rutaImagen", rutaImagen);
+            } else {
+              Toast.makeText(getApplicationContext(), "Hubo un error al tomar la foto", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == CODIGO_CAMARA){
+            if (grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_DENIED
+            && grantResults[1] != PackageManager.PERMISSION_DENIED){
+                try {
+                    camera.takePicture();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                Toast.makeText(getApplicationContext(), "Por favor consede los permisos necesarios", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     @Override
@@ -221,6 +274,37 @@ public class PrincipalActivity extends AppCompatActivity
     public void abrirPantallaCupon(){
         Intent pantallaCupon = new Intent(this, CuponActivity.class);
         startActivity(pantallaCupon);
+    }
+
+    public void iniciarCamara(){
+        camera = new Camera.Builder()
+                .resetToCorrectOrientation(true)
+                .setDirectory("Pictures Hai")
+                .setTakePhotoRequestCode(5001)
+                .setName("hai_" + System.currentTimeMillis())
+                .setImageFormat(Camera.IMAGE_JPEG)
+                .setCompression(75)
+                .setImageHeight(1000) //Manejar 480
+                .build(this);
+
+    }
+
+    public void elegirImagenPerfil(View view){
+        try {
+            int permision = ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+            if (permision != PackageManager.PERMISSION_GRANTED){
+                ActivityCompat.requestPermissions(this, new String[]{
+                        Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE
+                }, CODIGO_CAMARA);
+            } else {
+                camera.takePicture();
+            }
+
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), "No se puede abrir la camara", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
 

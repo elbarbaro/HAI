@@ -11,6 +11,7 @@
     <string name="mensaje_grafica_vacia" translatable="false">¡No has ingresado tus datos todavía!</string>
     <string name="titulo_mensaje_registro" translatable="false">Registro</string>
     <string name="mensaje_registro" translatable="false">No olvides actualizar tus datos</string>
+    <string name="titulo_pantalla_meta">Metas</string>
     <string-array name="lista_consejos">
         <item>Tener una meta es una forma de motivarse a ahorrar, ¿porque no lo intentas?</item>
         <item>Si distingues entre necesidad y deseo evitas compras innecesarias</item>
