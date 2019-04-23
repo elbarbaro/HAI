@@ -1,5 +1,6 @@
 package com.example.hai;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,10 +19,12 @@ public class MetaAdapter extends RecyclerView.Adapter<MetaAdapter.ViewHolder> {
     private List<Meta> listMeta;
     // Este es un valor de tipo interfaz que controla un click en un elemento de la lista
     private OnItemClickListener listener;
+    private Context context;
 
-    public MetaAdapter(List<Meta> listMeta, OnItemClickListener listener){
+    public MetaAdapter(List<Meta> listMeta, OnItemClickListener listener, Context context){
         this.listMeta = listMeta;
         this.listener = listener;
+        this.context = context;
     }
 
     public MetaAdapter(List<Meta> listMeta){
@@ -42,7 +45,7 @@ public class MetaAdapter extends RecyclerView.Adapter<MetaAdapter.ViewHolder> {
         Meta meta = listMeta.get(i);
         viewHolder.txtRazon.setText(meta.getRazon());
         viewHolder.txtCantidad.setText(String.valueOf(meta.getCantidad()));
-        viewHolder.txtTiempo.setText(String.format("%d días", meta.getTiempo()));
+        viewHolder.txtTiempo.setText(context.getResources().getString(R.string.meta_dias, meta.getTiempo()));
         viewHolder.onClick(meta, listener);
     }
 

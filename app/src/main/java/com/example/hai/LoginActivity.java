@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (!correo.isEmpty()&& !contrasena.isEmpty()){
                     pantallaPrincipal();
                 }else {
-                    Toast.makeText(getApplicationContext(),"Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),R.string.toast_datos, Toast.LENGTH_SHORT).show();
                 }
             }
         });

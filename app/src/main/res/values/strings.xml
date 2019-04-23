@@ -17,7 +17,7 @@
     <string name="titulo_mensaje_registro">Registro</string>
     <string name="titulo_pantalla_cupones">Cupones</string>
     <string name="titulo_pantalla_meta">Metas</string>
-    <string name="titulo_pantalla_diagnostico" translatable="false">Diagnóstico</string>
+    <string name="titulo_pantalla_diagnostico">Diagnóstico</string>
     <string name="btn_inicio">Inicio</string>
     <string name="btn_registrarse">Registrarse</string>
     <string name="btn_continuar">Continuar</string>
@@ -50,6 +50,7 @@
     <string name="pregunta_meta_que">¿Para qué quieres ahorrar?</string>
     <string name="pregunta_meta_cuanto">¿Cuanto necesitas ahorrar?</string>
     <string name="pregunta_meta_tiempo">¿En cuento tiempo deseas ahorrarlo?</string>
+    <string name="meta_dias">%d días</string>
 
     <string-array name="lista_consejos">
         <item>Tener una meta es una forma de motivarse a ahorrar, ¿porque no lo intentas?</item>
@@ -87,4 +88,7 @@
         <item>Jubilación</item>
     </string-array>
     <string name="mensaje_registro">No olvides actualizar tus datos</string>
+    <string name="dedicas_trabajo">Trabajo</string>
+    <string name="dedica_estudia">Estudio</string>
+    <string name="dedica_ambos">Ambos</string>
 </resources>

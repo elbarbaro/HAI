@@ -2,11 +2,11 @@
 <resources>
     <string name="app_name">HAI</string>
     <string name="titulo_pantalla_meta">Goals</string>
-    <string name="mensaje_registro">don’t forget to update your data</string>
-    <string name="titulo_mensaje_registro">" Registration "</string>
-    <string name="mensaje_grafica_vacia" translatable="false">You have not yet entered your data!</string>
+    <string name="mensaje_registro">Don’t forget to update your data</string>
+    <string name="titulo_mensaje_registro">"Registration "</string>
+    <string name="mensaje_grafica_vacia">You have not yet entered your data!</string>
     <string name="mensaje_diagnostico">"Please fill the blanks "</string>
-    <string name="btn_siguiente">" Following"</string>
+    <string name="btn_siguiente">Next</string>
     <string name="btn_registrarse">Sing Up</string>
     <string name="btn_continuar">Continue</string>
     <string name="categoria_datos_financieros">Financial data</string>
@@ -18,24 +18,23 @@
     <string name="menu_cerrar_sesion">Log out</string>
     <string name="btn_agregar">Add</string>
     <string name="mensaje_bienvenida_registro">"Welcome! Please complete the data to begin "</string>
-    <string name="btn_inicio">Home</string>
-    <string name="categoria_jubilacion">" Retirement  "</string>
+    <string name="categoria_jubilacion">"Retirement  "</string>
     <string name="btn_omitir">Skip</string>
     <string name="categoria_transporte">Trasportation</string>
     <string name="pregunta_dedica">What do you do?</string>
     <string name="pregunta_ingresos">"What about your weekly income? "</string>
-    <string name="pregunta_desearias_gastar">" How much would you like you to spend? "</string>
+    <string name="pregunta_desearias_gastar">"How much would you like you to spend? "</string>
     <string name="pregunta_gastas">"How much do you spend per day? "</string>
     <string name="pregunta_meta_cuanto">"How much do you need to save?  "</string>
     <string name="pregunta_meta_tiempo">How long you need to save it?</string>
-    <string name="pregunta_meta_que">" Why would you want to save? "</string>
+    <string name="pregunta_meta_que">"Why would you want to save? "</string>
     <string name="mensaje_meta">Add a goal you want to achieve</string>
     <string name="contraseña">"Password  "</string>
     <string name="correo_electronico">Email</string>
     <string name="fecha_nacimiento">"Date of birth  "</string>
-    <string name="toast_cantidadCero">" Enter one number greater than zero "</string>
+    <string name="toast_cantidadCero">"Enter one number greater than zero "</string>
     <string name="toast_datos">"Please fill in the blanks "</string>
-    <string name="mensaje_datos_financieros">"please answer the questions  "</string>
+    <string name="mensaje_datos_financieros">"Please answer the questions  "</string>
     <string name="btn_terminar">Finish</string>
     <string name="toast_error_foto">There was an error when taking photo</string>
     <string name="toast_error_camara">Unable to open camera</string>
@@ -72,4 +71,10 @@
         <item>The basis of a good economy is having more assets than liabilities</item>
         <item>In Mexico only 1% of young people is saving for retirement, and you? already tried the retirement function?</item>
     </string-array>
+    <string name="btn_inicio">Login</string>
+    <string name="titulo_pantalla_diagnostico">diagnosis</string>
+    <string name="dedicas_trabajo">Work</string>
+    <string name="dedica_estudia">Study</string>
+    <string name="dedica_ambos">Both</string>
+    <string name="meta_dias">%d days</string>
 </resources>

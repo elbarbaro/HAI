@@ -17,7 +17,7 @@
         android:layout_marginEnd="8dp"
         android:background="@color/colorPrimary"
         android:padding="8dp"
-        android:text="Datos Financieros"
+        android:text="@string/categoria_datos_financieros"
         android:textColor="@android:color/black"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:gravity="center|center_horizontal"
             android:padding="8dp"
-            android:text="Por favor contesta las preguntas"
+            android:text="@string/mensaje_datos_financieros"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:padding="8dp"
-            android:text="¿A qué te dedicas?"
+            android:text="@string/pregunta_dedica"
             android:textColor="@android:color/black"
             android:textSize="15sp" />
 
@@ -67,21 +67,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Trabajo" />
+                android:text="@string/dedicas_trabajo" />
 
             <RadioButton
                 android:id="@+id/rbtnEstudio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Estudio" />
+                android:text="@string/dedica_estudia" />
 
             <RadioButton
                 android:id="@+id/rbtnAmbos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ambos" />
+                android:text="@string/dedica_ambos" />
         </RadioGroup>
 
         <TextView
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:padding="8dp"
-            android:text="¿Cuales son aproximadamente tus ingresos semanales?"
+            android:text="@string/pregunta_ingresos"
             android:textColor="@android:color/black"
             android:textSize="15sp" />
 
@@ -107,7 +107,7 @@
             android:id="@+id/btnSiguienteDF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Siguiente"
+            android:text="@string/btn_siguiente"
             android:layout_marginLeft="80dp"
             android:layout_marginHorizontal="80dp"
             android:layout_marginTop="30dp"
