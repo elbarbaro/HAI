@@ -145,7 +145,7 @@ public class PrincipalActivity extends AppCompatActivity
                 //Aqui se realiza la operacion para calcular el ahorro
                 float resultado = ingresos - sumaCantidad;
                 // Cree una categoria que guardara la informacion del ahorro
-                Categoria ahorro = new Categoria("Ahorro", resultado,0 );
+                Categoria ahorro = new Categoria(getResources().getString(R.string.categoria_ahorro), resultado,0 );
                 //Aqui le mande los datos del ahorro a la grafica
                 list.add(new PieEntry(ahorro.getCantidad(), ahorro.getNombre()));
 

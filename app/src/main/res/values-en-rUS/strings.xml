@@ -77,4 +77,5 @@
     <string name="dedica_estudia">Study</string>
     <string name="dedica_ambos">Both</string>
     <string name="meta_dias">%d days</string>
+    <string name="categoria_ahorro">Saving</string>
 </resources>
