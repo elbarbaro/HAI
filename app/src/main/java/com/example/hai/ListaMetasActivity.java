@@ -79,7 +79,7 @@ public class ListaMetasActivity extends AppCompatActivity implements MetaAdapter
         }
 
         // Aqui se esta creando un nuevo Adapter con la informacion de listaMetas
-        return new MetaAdapter(lista, this);
+        return new MetaAdapter(lista, this, getApplicationContext());
 
     }
 
