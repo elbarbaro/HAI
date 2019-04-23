@@ -17,7 +17,7 @@
         android:layout_marginEnd="8dp"
         android:background="@color/colorPrimary"
         android:padding="8dp"
-        android:text="Meta"
+        android:text="@string/titulo_pantalla_meta"
         android:textColor="@android:color/black"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Añade una meta que quieras lograr"
+            android:text="@string/mensaje_meta"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
@@ -54,7 +54,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:padding="8dp"
-            android:text="¿Para que quieres ahorrar?"
+            android:text="@string/pregunta_meta_que"
             android:textColor="@android:color/black"
             android:textSize="15sp" />
 
@@ -74,7 +74,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:padding="8dp"
-            android:text="¿Cuanto necesitas ahorrar?"
+            android:text="@string/pregunta_meta_cuanto"
             android:textColor="@android:color/black"
             android:textSize="15sp" />
 
@@ -94,7 +94,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:padding="8dp"
-            android:text="¿En cuanto tiempo deseas ahorrarlo?"
+            android:text="@string/pregunta_meta_tiempo"
             android:textColor="@android:color/black"
             android:textSize="15sp" />
 
@@ -114,6 +114,6 @@
             android:layout_margin="30dp"
             android:background="@color/colorPrimary"
             android:onClick="agregarMeta"
-            android:text="Agregar" />
+            android:text="@string/btn_agregar" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

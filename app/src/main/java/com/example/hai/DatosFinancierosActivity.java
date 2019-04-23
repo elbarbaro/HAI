@@ -28,11 +28,11 @@ public class DatosFinancierosActivity extends AppCompatActivity {
                         GCEASesion.guardarFloat(getSharedPreferences(LoginActivity.FILE_NAME, 0),"ingresos", fIngreso );
                         finish();
                     } else {
-                        Toast.makeText(getApplicationContext(), "Ingresa una cantidad mayor a cero", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), R.string.toast_cantidadCero, Toast.LENGTH_SHORT).show();
                     }
 
                 } else {
-                    Toast.makeText(getApplicationContext(), "Por favor ingresa los datos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.toast_datos, Toast.LENGTH_SHORT).show();
                 }
             }
         });

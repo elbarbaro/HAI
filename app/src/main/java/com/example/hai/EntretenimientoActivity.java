@@ -44,11 +44,11 @@ public class EntretenimientoActivity extends AppCompatActivity {
                         // Eres temporal jejeje
                         //Toast.makeText(getApplicationContext(), categoria.toString(), Toast.LENGTH_LONG).show();
                     }else {
-                        Toast.makeText(getApplicationContext(),"Ingresa una cantidad mayor a cero", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),R.string.toast_cantidadCero, Toast.LENGTH_SHORT).show();
                     }
 
                 } else {
-                    Toast.makeText(getApplicationContext(),"Por favor completa los espacios en blanco", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),R.string.toast_datos, Toast.LENGTH_SHORT).show();
                 }
             }
         });

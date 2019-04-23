@@ -3,28 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/registro"
-        android:title="Registro"
+        android:title="@string/registro"
         android:icon="@drawable/currency_usd"/>
-        <item
+         <!--<item
             android:id="@+id/historial"
             android:title="Historial"
             android:orderInCategory="100"
-            android:icon="@drawable/reloj_arena"/>
+            android:icon="@drawable/reloj_arena"/>-->
     <item
         android:id="@+id/Cupones"
-        android:title="Cupones"
+        android:title="@string/titulo_pantalla_cupones"
         android:icon="@drawable/cupon"/>
     <item
         android:id="@+id/Configuraciones"
-        android:title="Configuraciones"
+        android:title="@string/menu_configuraciones"
         android:orderInCategory="100"
         android:icon="@drawable/tuerca"/>
     <item
         android:id="@+id/Cerrar_sesion"
-        android:title="Cerrar sesión"
+        android:title="@string/menu_cerrar_sesion"
         android:orderInCategory="100"/>
     <item
         android:id="@+id/Meta"
-        android:title="Meta"
+        android:title="@string/titulo_pantalla_meta"
         android:icon="@drawable/trofeo"/>
 </menu>

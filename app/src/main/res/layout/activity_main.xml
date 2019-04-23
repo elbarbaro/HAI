@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/logoHai"
@@ -44,7 +44,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Correo"
+        android:hint="@string/correo_electronico"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@id/editContraseña"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +60,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Contraseña"
+        android:hint="@string/contraseña"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="@id/btnInicio"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +76,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="8dp"
-        android:text="Inicio"
+        android:text="@string/btn_inicio"
         app:layout_constraintBottom_toTopOf="@id/btnRegistrase"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -94,7 +94,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="8dp"
-        android:text="Registrarse"
+        android:text="@string/btn_registrarse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

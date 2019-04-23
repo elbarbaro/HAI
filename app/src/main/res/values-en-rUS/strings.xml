@@ -2,4 +2,74 @@
 <resources>
     <string name="app_name">HAI</string>
     <string name="titulo_pantalla_meta">Goals</string>
+    <string name="mensaje_registro">don’t forget to update your data</string>
+    <string name="titulo_mensaje_registro">" Registration "</string>
+    <string name="mensaje_grafica_vacia" translatable="false">You have not yet entered your data!</string>
+    <string name="mensaje_diagnostico">"Please fill the blanks "</string>
+    <string name="btn_siguiente">" Following"</string>
+    <string name="btn_registrarse">Sing Up</string>
+    <string name="btn_continuar">Continue</string>
+    <string name="categoria_datos_financieros">Financial data</string>
+    <string name="categoria_educacion">Education</string>
+    <string name="categoria_entretenimiento">Entertainment</string>
+    <string name="titulo_pantalla_cupones">Coupons</string>
+    <string name="menu_configuraciones">Settings</string>
+    <string name="categoria_comida">Food</string>
+    <string name="menu_cerrar_sesion">Log out</string>
+    <string name="btn_agregar">Add</string>
+    <string name="mensaje_bienvenida_registro">"Welcome! Please complete the data to begin "</string>
+    <string name="btn_inicio">Home</string>
+    <string name="categoria_jubilacion">" Retirement  "</string>
+    <string name="btn_omitir">Skip</string>
+    <string name="categoria_transporte">Trasportation</string>
+    <string name="pregunta_dedica">What do you do?</string>
+    <string name="pregunta_ingresos">"What about your weekly income? "</string>
+    <string name="pregunta_desearias_gastar">" How much would you like you to spend? "</string>
+    <string name="pregunta_gastas">"How much do you spend per day? "</string>
+    <string name="pregunta_meta_cuanto">"How much do you need to save?  "</string>
+    <string name="pregunta_meta_tiempo">How long you need to save it?</string>
+    <string name="pregunta_meta_que">" Why would you want to save? "</string>
+    <string name="mensaje_meta">Add a goal you want to achieve</string>
+    <string name="contraseña">"Password  "</string>
+    <string name="correo_electronico">Email</string>
+    <string name="fecha_nacimiento">"Date of birth  "</string>
+    <string name="toast_cantidadCero">" Enter one number greater than zero "</string>
+    <string name="toast_datos">"Please fill in the blanks "</string>
+    <string name="mensaje_datos_financieros">"please answer the questions  "</string>
+    <string name="btn_terminar">Finish</string>
+    <string name="toast_error_foto">There was an error when taking photo</string>
+    <string name="toast_error_camara">Unable to open camera</string>
+    <string name="toast_permisos">Please grant the necessary permissions</string>
+    <string name="nombre">Name</string>
+    <string name="mensaje_diagnostico_inicio">Select the categories in which you spend and respond the necessary data</string>
+    <string name="registro">Register</string>
+
+    <string-array name="lista_consejos">
+        <item>Having a goal is one way to motivate yourself to save money, why not try it?</item>
+        <item> If you distinguish between need and desire you avoid unnecessary purchases</item>
+        <item>You can also sell what you no longer use to generate more revenue</item>
+        <item> Purchase basic clothing, it never goes out of fashion</item>
+        <item> Manage a budget helps to better organize</item>
+        <item> If you eat at home, or prepare your food before you save unnecessary spending</item>
+        <item>Compare prices regularly to consciously choose where you make your purchases</item>
+        <item>Prioritize your expenses to establish a good budget</item>
+        <item> Hit the streets with the right money than you need, so avoid compulsive shopping</item>
+        <item> Sabe your money exchange!</item>
+        <item>It restricts the use of credit cards</item>
+        <item> Public transport is cheaper, but it is also more time consuming: take advantage of that time</item>
+        <item>Applies the rule of 10 seconds! when you see something tempting, stop breathing,
+            and if after 10 seconds there is a strong reason to buy it, keep walking</item>
+        <item> It is considered exercise at home and save the gym fee</item>
+        <item>Organizes meetings at home instead of going out, so everyone will save a lot of money</item>
+        <item>Only 8% of the money exists in physical form, the rest is in electronic form</item>
+        <item>There are currently about 170 different currencies in the world</item>
+        <item>The word "salary" has its origins in the Egyptian time</item>
+        <item>The bill was created in China in the 7th century</item>
+        <item>The first Mint in America was that of Mexico, founded in 1535</item>
+        <item>The accounting is more than 5,000 years old, do you hope to learn?</item>
+        <item>Personal income tax is an English invention, as the war with France was too expensive, so it created the tax income</item>
+        <item>Investments are considered as liabilities until they generate benefits</item>
+        <item>The basis of a good economy is having more assets than liabilities</item>
+        <item>In Mexico only 1% of young people is saving for retirement, and you? already tried the retirement function?</item>
+    </string-array>
 </resources>

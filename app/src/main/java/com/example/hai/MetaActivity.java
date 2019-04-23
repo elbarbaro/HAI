@@ -48,10 +48,10 @@ public class MetaActivity extends AppCompatActivity {
                 finish();
 
             } else {
-                Toast.makeText(getApplicationContext(), "Ingresa una cantidad mayor a cero", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.toast_cantidadCero, Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(getApplicationContext(), "Por favor ingresa los datos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.toast_datos, Toast.LENGTH_SHORT).show();
         }
         // Esto es para cerrar una pantalla
     }

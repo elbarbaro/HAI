@@ -7,38 +7,77 @@
     <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
     <string name="nav_header_desc" translatable="false">Navigation header</string>
     <string name="action_settings" translatable="false">Settings</string>
-    <string name="mensaje_diagnostico" translatable="false">Por favor llena los espacios en blanco</string>
-    <string name="mensaje_grafica_vacia" translatable="false">¡No has ingresado tus datos todavía!</string>
-    <string name="titulo_mensaje_registro" translatable="false">Registro</string>
-    <string name="mensaje_registro" translatable="false">No olvides actualizar tus datos</string>
+    <string name="mensaje_diagnostico">Por favor llena los espacios en blanco</string>
+    <string name="mensaje_grafica_vacia">¡No has ingresado tus datos todavía!</string>
+    <string name="mensaje_bienvenida_registro">¡Bienvenido! Por favor completa los datos para comenzar</string>
+    <string name="mensaje_meta">Añade una meta que quieras lograr</string>
+    <string name="mensaje_datos_financieros">Por favor contesta las preguntas</string>
+    <string name="mensaje_diagnostico_inicio">Seleciona las categorías en
+        las que gastas y responde los datos necesarios.</string>
+    <string name="titulo_mensaje_registro">Registro</string>
+    <string name="titulo_pantalla_cupones">Cupones</string>
     <string name="titulo_pantalla_meta">Metas</string>
+    <string name="titulo_pantalla_diagnostico" translatable="false">Diagnóstico</string>
+    <string name="btn_inicio">Inicio</string>
+    <string name="btn_registrarse">Registrarse</string>
+    <string name="btn_continuar">Continuar</string>
+    <string name="btn_omitir">Omitir</string>
+    <string name="btn_agregar">Agregar</string>
+    <string name="btn_siguiente">Siguiente</string>
+    <string name="btn_terminar">Terminar</string>
+    <string name="categoria_comida">Comida</string>
+    <string name="categoria_transporte">Transporte</string>
+    <string name="categoria_entretenimiento">Entretenimiento</string>
+    <string name="categoria_educacion">Educación</string>
+    <string name="categoria_jubilacion">Jubilación</string>
+    <string name="categoria_datos_financieros">Datos financieros</string>
+    <string name="menu_configuraciones">Configuraciones</string>
+    <string name="menu_cerrar_sesion">Cerrar sesión</string>
+    <string name="toast_cantidadCero">Ingresa una cantidad mayor a cero</string>
+    <string name="toast_datos">Por favor completa los espacios en blanco</string>
+    <string name="toast_error_camara">No se puede abrir la cámara</string>
+    <string name="toast_permisos">Por favor concede los permisos necesarios</string>
+    <string name="toast_error_foto">Hubo un error al tomar la foto</string>
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="nombre">Nombre</string>
+    <string name="registro">Registro</string>
+    <string name="fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="pregunta_gastas">¿Cuánto gastas al día?</string>
+    <string name="pregunta_desearias_gastar">¿Cuánto desearías gastar?</string>
+    <string name="pregunta_dedica">¿A qué te dedicas?</string>
+    <string name="pregunta_ingresos">¿Cuales son aproximadamente tus ingresos semanales?</string>
+    <string name="pregunta_meta_que">¿Para qué quieres ahorrar?</string>
+    <string name="pregunta_meta_cuanto">¿Cuanto necesitas ahorrar?</string>
+    <string name="pregunta_meta_tiempo">¿En cuento tiempo deseas ahorrarlo?</string>
+
     <string-array name="lista_consejos">
         <item>Tener una meta es una forma de motivarse a ahorrar, ¿porque no lo intentas?</item>
         <item>Si distingues entre necesidad y deseo evitas compras innecesarias</item>
         <item>Puedes vender lo que ya no utilices para generar más ingresos</item>
-        <item>Compra ropa basica, nunca pasa de moda</item>
+        <item>Compra ropa básica, nunca pasa de moda</item>
         <item>Maneja un presupuesto ayuda a una mejor organización</item>
         <item>Si comes en casa, o preparas tu alimento desde antes te ahorras un gasto innecesario</item>
-        <item>Compara precios regularmente para elegir concientemente donde compras</item>
+        <item>Compara precios regularmente para elegir conscientemente donde compras</item>
         <item>Prioriza tus gastos para establecer un buen presupuesto</item>
-        <item>Sal a la calle con el dinero justo que necesitas, asi evitas compras compulsivas</item>
+        <item>Sal a la calle con el dinero justo que necesitas, así evitas compras compulsivas</item>
         <item>¡Guarda tus cambios!</item>
-        <item>Restrige el uso de las tarjetas de credito</item>
-        <item>El transporte publico es mas barato, pero también más tardado: aprovecha ese tiempo</item>
+        <item>Restringe el uso de las tarjetas de crédito</item>
+        <item>El transporte público es más barato, pero también más tardado: aprovecha ese tiempo</item>
         <item>¡Aplica la regla de los 10 segundos! Cuando veas algo tentador, detente, respira
-            y si despues de 10 segundos no hay una razón contundente para comprarlo, sigue tu camino</item>
+            y si después de 10 segundos no hay una razón contundente para comprarlo, sigue tu camino</item>
         <item>Considera ejercitarte en casa y ahorrar la cuota del gimnasio</item>
-        <item>Organiza reuniones en casa en lugar de salir, asi todos ahorraran un monton de dinero </item>
-        <item>El 8% del dinero existe en forma física, el resto se encuentra en manera electronica</item>
+        <item>Organiza reuniones en casa en lugar de salir, así todos ahorraran un montón de dinero </item>
+        <item>El 8% del dinero existe en forma física, el resto se encuentra en manera electrónica</item>
         <item>Actualmente hay unas 170 monedas diferentes en el mundo</item>
-        <item>La palabra "salario" tiene sus origenes en la epoca egipcia</item>
-        <item>El billete se creo en China en el siglo VII</item>
+        <item>La palabra "salario" tiene sus orígenes en la época egipcia</item>
+        <item>El billete se creó en China en el siglo VII</item>
         <item>La primera Casa de Moneda en América fue la de México, fundada en 1535</item>
         <item>La contabilidad tiene más de 5,000 años, ¿qué esperas para aprenderla?</item>
         <item>El IRPF es un invento inglés, pues la guerra con Francia era demasiado cara, por lo que crearon el impuesto sobre la renta</item>
-        <item>Las inversiones son consideradas como pasivos hasta que no generan beneficios</item>
-        <item>La base de una buena economia esta en tener más activos que pasivos</item>
-        <item>En México tan solo el 1% de los jovenes ahorran para su retiro, ¿y tú?¿ya probaste la función de jubilación?</item>
+        <item>Las inversiones son consideradas como pasivos hasta que generan beneficios</item>
+        <item>La base de una buena economía está en tener más activos que pasivos</item>
+        <item>En México tan solo el 1% de los jóvenes ahorran para su retiro, ¿y tú?¿ya probaste la función de jubilación?</item>
     </string-array>
     <string-array name="array_categorias">
         <item>Transporte</item>
@@ -47,4 +86,5 @@
         <item>Entretenimiento</item>
         <item>Jubilación</item>
     </string-array>
+    <string name="mensaje_registro">No olvides actualizar tus datos</string>
 </resources>

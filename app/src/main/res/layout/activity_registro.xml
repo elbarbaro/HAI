@@ -14,7 +14,7 @@
         android:layout_height="60dp"
         android:background="@color/colorPrimary"
         android:padding="8dp"
-        android:text="Registro"
+        android:text="@string/registro"
         android:textColor="@android:color/black"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,8 @@
             android:layout_marginTop="0dp"
             android:gravity="center|center_vertical"
             android:padding="8dp"
-            android:text="¡Bienvenido! Por favor completa los datos para comenzar."
+            android:text="@string/mensaje_bienvenida_registro"
+            android:textColor="@android:color/black"
             android:textSize="25sp" />
 
         <EditText
@@ -53,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:ems="10"
-            android:hint="Nombre"
+            android:hint="@string/nombre"
             android:inputType="textPersonName" />
 
         <!--<EditText
@@ -71,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:ems="10"
-            android:hint="Fecha de nacimiento"
+            android:hint="@string/fecha_nacimiento"
             android:inputType="date" />
 
         <EditText
@@ -80,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:ems="10"
-            android:hint="Correo electronico"
+            android:hint="@string/correo_electronico"
             android:inputType="textPersonName" />
 
         <!--<EditText
@@ -103,7 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:ems="10"
-            android:hint="Contraseña"
+            android:hint="@string/contraseña"
             android:inputType="textPassword" />
 
         <Button
@@ -112,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@color/colorPrimary"
-            android:text="Siguiente" />
+            android:text="@string/btn_siguiente" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

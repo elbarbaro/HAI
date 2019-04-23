@@ -175,7 +175,7 @@ public class PrincipalActivity extends AppCompatActivity
                 String rutaImagen = camera.resizeAndGetCameraBitmapPath(80);
                 GCEASesion.guardarString(getSharedPreferences(LoginActivity.FILE_NAME, 0), "rutaImagen", rutaImagen);
             } else {
-              Toast.makeText(getApplicationContext(), "Hubo un error al tomar la foto", Toast.LENGTH_LONG).show();
+              Toast.makeText(getApplicationContext(), (R.string.toast_error_foto), Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -191,7 +191,7 @@ public class PrincipalActivity extends AppCompatActivity
                     e.printStackTrace();
                 }
             } else {
-                Toast.makeText(getApplicationContext(), "Por favor consede los permisos necesarios", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), (R.string.toast_permisos), Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -216,9 +216,9 @@ public class PrincipalActivity extends AppCompatActivity
         if (id == R.id.Cerrar_sesion) {
             cerrasSesion();
             // Handle the camera action
-        } else if (id == R.id.historial) {
+        } /*else if (id == R.id.historial) {
 
-        } else if (id == R.id.registro) {
+        }*/ else if (id == R.id.registro) {
             navegarPantallaDiagnostico();
 
         } else if (id == R.id.Cupones) {
@@ -306,7 +306,7 @@ public class PrincipalActivity extends AppCompatActivity
 
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), "No se puede abrir la camara", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.toast_error_camara, Toast.LENGTH_SHORT).show();
         }
 
     }

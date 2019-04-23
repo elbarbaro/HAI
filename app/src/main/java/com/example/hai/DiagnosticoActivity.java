@@ -53,15 +53,15 @@ public class DiagnosticoActivity extends AppCompatActivity {
         int idButton = view.getId();
         String nameCategoria = "";
         if (idButton == R.id.btnComida){
-            nameCategoria = "Comida";
+            nameCategoria = getResources().getString(R.string.categoria_comida);
         } else if (idButton == R.id.btnEducacion){
-            nameCategoria = "Educacion";
+            nameCategoria = getResources().getString(R.string.categoria_educacion);
         } else if (idButton == R.id.btnEntretenimiento){
-            nameCategoria = "Entretenimiento";
+            nameCategoria = getResources().getString(R.string.categoria_entretenimiento);
         } else if (idButton == R.id.btnJubilacion){
-            nameCategoria = "Jubilación";
+            nameCategoria = getResources().getString(R.string.categoria_jubilacion);
         } else if (idButton == R.id.btnTransporte){
-            nameCategoria = "Trasporte";
+            nameCategoria = getResources().getString(R.string.categoria_transporte);
         }
         Intent pantallaCategoria = new Intent(this, EntretenimientoActivity.class);
         pantallaCategoria.putExtra("nombre_categoria", nameCategoria);

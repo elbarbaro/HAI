@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:gravity="center|center_vertical"
             android:padding="8dp"
-            android:text="Por favor llena los espacios en blanco"
+            android:text="@string/mensaje_diagnostico"
             android:textColor="@android:color/black"
             android:textSize="25sp" />
 
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:padding="8dp"
-            android:text="¿Cuanto gastas al día?"
+            android:text="@string/pregunta_gastas"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:padding="8dp"
-            android:text="¿Cuanto desearias gastar?"
+            android:text="@string/pregunta_desearias_gastar"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
@@ -96,6 +96,6 @@
             android:layout_margin="40dp"
             android:background="@color/colorPrimary"
             android:padding="8dp"
-            android:text="Terminar" />
+            android:text="@string/btn_terminar" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
